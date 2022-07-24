@@ -1,0 +1,77 @@
+.profile-container {
+  padding: 20px;
+  font-size: 22px;
+}
+
+.profile-card {
+  padding: 30px 10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #e6f7ff;
+  border-radius: 16px;
+}
+
+.profile-card h2 {
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 46px;
+  color: #262626;
+}
+
+.search-input {
+  height: 45px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: block;
+  color: #d9d9d9;
+  font-size: 0.7em;
+  line-height: 24px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #d9d9d9;
+}
+
+.search-button {
+  height: 45px;
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .profile-container {
+    padding: 40px;
+    font-size: 46px;
+  }
+
+  .profile-card {
+    padding: 30px;
+    margin-bottom: 40px;
+  }
+
+  .profile-card h2 {
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    height: 60px;
+    max-width: 400px;
+    padding: 20px;
+    font-size: 0.5em;
+  }
+
+  .search-button {
+    height: 60px;
+    font-size: 0.5em;
+  }
+}
