@@ -3,7 +3,8 @@
   min-height: 70px;
 }
 
-.nav-logo-text {
+.nav-logo-text,
+.nav-logo-text:hover {
   text-decoration: none;
   color: #FFF;
 }

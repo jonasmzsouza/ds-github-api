@@ -1,0 +1,36 @@
+.home-container {
+  padding: 20px;
+  font-size: 30px;
+}
+
+.home-container h2 {
+  margin-bottom: 5px;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.home-container p {
+  font-size: 0.5em;
+  letter-spacing: 0.02em;
+  color: #7e7e7e;
+}
+
+.start-button {
+  height: 45px;
+  color: #fff;
+  font-size: 0.5em;
+  line-height: 24px;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    padding: 40px;
+    font-size: 48px;
+  }
+
+  .start-button {
+    height: 60px;
+  }
+}
