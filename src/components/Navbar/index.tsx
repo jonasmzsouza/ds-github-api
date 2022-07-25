@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar bg-primary main-nav">
-      <a href="/" className="nav-logo-text">
+      <Link to={'/'} className="nav-logo-text">
         <h1>Github API</h1>
-      </a>
+      </Link>
     </nav>
   );
 };
