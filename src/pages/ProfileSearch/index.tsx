@@ -1,5 +1,7 @@
+import axios from 'axios';
 import ResultCard from 'components/ResultCard';
 import { useState } from 'react';
+import { Profile } from 'type/profile';
 import './styles.css';
 
 type FormData = {
@@ -7,6 +9,8 @@ type FormData = {
 };
 
 const ProfileSearch = () => {
+  const [profile, setProfile] = useState<Profile>();
+
   const [formData, setFormData] = useState<FormData>({
     profile: '',
   });
@@ -20,8 +24,16 @@ const ProfileSearch = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(formData);
-  }
+    axios
+      .get(`https://api.github.com/users/${formData.profile}`)
+      .then((response) => {
+        setProfile(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        setProfile(undefined);
+      });
+  };
 
   return (
     <div className="container profile-container">
@@ -31,6 +43,8 @@ const ProfileSearch = () => {
           <div className="form-container">
             <input
               type="text"
+              name="profile"
+              value={formData.profile}
               className="search-input"
               placeholder="Usuário Github"
               onChange={handleChange}
@@ -42,7 +56,7 @@ const ProfileSearch = () => {
         </form>
       </div>
 
-      <ResultCard />
+      {profile && <ResultCard profile={profile} />}
     </div>
   );
 };
