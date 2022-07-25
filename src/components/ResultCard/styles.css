@@ -70,6 +70,7 @@
 
 @media (min-width: 768px) {
   .result-card {
+    padding: 40px;
     flex-direction: row;
   }
 

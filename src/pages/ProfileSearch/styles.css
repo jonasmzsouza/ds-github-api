@@ -55,7 +55,7 @@
   }
 
   .profile-card {
-    padding: 30px;
+    padding: 40px;
     margin-bottom: 40px;
   }
 
@@ -64,14 +64,14 @@
   }
 
   .search-input {
-    height: 60px;
+    height: 50px;
     max-width: 400px;
     padding: 20px;
     font-size: 0.5em;
   }
 
   .search-button {
-    height: 60px;
+    height: 50px;
     font-size: 0.5em;
   }
 }
