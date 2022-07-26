@@ -1,0 +1,9 @@
+.profile-loader-mobile {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .profile-loader-mobile {
+    display: none;
+  }
+}

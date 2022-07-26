@@ -2,6 +2,8 @@ import axios from 'axios';
 import ResultCard from 'components/ResultCard';
 import { useState } from 'react';
 import { Profile } from 'type/profile';
+import ProfileSearchLoaderMobile from './ProfileSearchLoaderDesk';
+import ProfileSearchLoaderDesk from './ProfileSearchLoaderMobile';
 import './styles.css';
 
 type FormData = {
@@ -10,6 +12,7 @@ type FormData = {
 
 const ProfileSearch = () => {
   const [profile, setProfile] = useState<Profile>();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
     profile: '',
@@ -24,6 +27,8 @@ const ProfileSearch = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    setIsLoading(true);
     axios
       .get(`https://api.github.com/users/${formData.profile}`)
       .then((response) => {
@@ -32,6 +37,9 @@ const ProfileSearch = () => {
       })
       .catch((error) => {
         setProfile(undefined);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -56,7 +64,14 @@ const ProfileSearch = () => {
         </form>
       </div>
 
-      {profile && <ResultCard profile={profile} />}
+      {isLoading ? (
+        <>
+          <ProfileSearchLoaderMobile />
+          <ProfileSearchLoaderDesk />
+        </>
+      ) : (
+        profile && <ResultCard profile={profile} />
+      )}
     </div>
   );
 };
