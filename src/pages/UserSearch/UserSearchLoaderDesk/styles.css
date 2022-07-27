@@ -1,9 +1,9 @@
-.profile-loader-desk {
+.user-loader-desk {
   display: none;
 }
 
 @media (min-width: 768px) {
-  .profile-loader-desk {
+  .user-loader-desk {
     display: block;
   }
 }

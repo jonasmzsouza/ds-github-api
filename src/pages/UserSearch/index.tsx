@@ -1,21 +1,21 @@
 import axios from 'axios';
 import ResultCard from 'components/ResultCard';
 import { useState } from 'react';
-import { Profile } from 'type/profile';
-import ProfileSearchLoaderMobile from './ProfileSearchLoaderDesk';
-import ProfileSearchLoaderDesk from './ProfileSearchLoaderMobile';
+import { User } from 'type/user';
+import UserSearchLoaderMobile from './UserSearchLoaderDesk';
+import UserSearchLoaderDesk from './UserSearchLoaderMobile';
 import './styles.css';
 
 type FormData = {
-  profile: string;
+  user: string;
 };
 
-const ProfileSearch = () => {
-  const [profile, setProfile] = useState<Profile>();
+const UserSearch = () => {
+  const [user, setUser] = useState<User>();
   const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState<FormData>({
-    profile: '',
+    user: '',
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,13 +30,13 @@ const ProfileSearch = () => {
 
     setIsLoading(true);
     axios
-      .get(`https://api.github.com/users/${formData.profile}`)
+      .get(`https://api.github.com/users/${formData.user}`)
       .then((response) => {
-        setProfile(response.data);
+        setUser(response.data);
         console.log(response.data);
       })
       .catch((error) => {
-        setProfile(undefined);
+        setUser(undefined);
       })
       .finally(() => {
         setIsLoading(false);
@@ -44,15 +44,15 @@ const ProfileSearch = () => {
   };
 
   return (
-    <div className="container profile-container">
-      <div className="profile-card">
+    <div className="container user-container">
+      <div className="user-card">
         <h2>Encontre um perfil Github</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-container">
             <input
               type="text"
-              name="profile"
-              value={formData.profile}
+              name="user"
+              value={formData.user}
               className="search-input"
               placeholder="Usuário Github"
               onChange={handleChange}
@@ -66,14 +66,14 @@ const ProfileSearch = () => {
 
       {isLoading ? (
         <>
-          <ProfileSearchLoaderMobile />
-          <ProfileSearchLoaderDesk />
+          <UserSearchLoaderMobile />
+          <UserSearchLoaderDesk />
         </>
       ) : (
-        profile && <ResultCard profile={profile} />
+        user && <ResultCard user={user} />
       )}
     </div>
   );
 };
 
-export default ProfileSearch;
+export default UserSearch;

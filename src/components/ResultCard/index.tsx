@@ -1,17 +1,17 @@
-import { Profile } from 'type/profile';
+import { User } from 'type/user';
 import './styles.css';
 
 type Props = {
-  profile: Profile;
+  user: User;
 }
 
-const ResultCard = ({ profile }: Props) => {
+const ResultCard = ({ user }: Props) => {
   return (
     <div className="result-card">
       <div className="result-image-container">
         <img
-          src={profile.avatar_url}
-          alt={profile.name}
+          src={user.avatar_url}
+          alt={user.name}
         />
       </div>
       <div className="result-info-container">
@@ -20,24 +20,24 @@ const ResultCard = ({ profile }: Props) => {
           <div className="result-info-inner">
             <h4>Perfil:</h4>
             <a
-              href={profile.url}
+              href={user.url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p>{profile.url}</p>
+              <p>{user.url}</p>
             </a>
           </div>
           <div className="result-info-inner">
             <h4>Seguidores:</h4>
-            <p>{profile.followers}</p>
+            <p>{user.followers}</p>
           </div>
           <div className="result-info-inner">
             <h4>Localidade:</h4>
-            <p>{profile.location}</p>
+            <p>{user.location}</p>
           </div>
           <div className="result-info-inner">
             <h4>Nome:</h4>
-            <p>{profile.name}</p>
+            <p>{user.name}</p>
           </div>
         </div>
       </div>

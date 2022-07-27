@@ -2,8 +2,8 @@ import './styles.css';
 
 import ContentLoader from 'react-content-loader';
 
-const ProfileSearchLoaderMobile = () => (
-  <div className="profile-loader-mobile">
+const UserSearchLoaderMobile = () => (
+  <div className="user-loader-mobile">
     <ContentLoader
       width={280}
       height={700}
@@ -28,11 +28,11 @@ const ProfileSearchLoaderMobile = () => (
   </div>
 );
 
-ProfileSearchLoaderMobile.metadata = {
+UserSearchLoaderMobile.metadata = {
   name: 'Sridhar Easwaran',
   github: 'sridhareaswaran',
   description: 'Events',
   filename: 'EventsLoader',
 };
 
-export default ProfileSearchLoaderMobile;
+export default UserSearchLoaderMobile;

@@ -2,8 +2,8 @@ import './styles.css';
 
 import ContentLoader from 'react-content-loader';
 
-const ProfileSearchLoaderDesk = () => (
-  <div className="profile-loader-desk">
+const UserSearchLoaderDesk = () => (
+  <div className="user-loader-desk">
     <ContentLoader
       width={700}
       height={300}
@@ -28,11 +28,11 @@ const ProfileSearchLoaderDesk = () => (
   </div>
 );
 
-ProfileSearchLoaderDesk.metadata = {
+UserSearchLoaderDesk.metadata = {
   name: 'Sridhar Easwaran',
   github: 'sridhareaswaran',
   description: 'Events',
   filename: 'EventsLoader',
 };
 
-export default ProfileSearchLoaderDesk;
+export default UserSearchLoaderDesk;
