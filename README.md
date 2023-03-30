@@ -57,9 +57,15 @@ Technologies and tools that were used in the development of the project:
 
 ## 🔧 How to
 
+### Requirements
+- node 14.x
+- npm 6.x
+- yarn 1.22.x
+
+### Installation
 1. clone repo
 2. delete the file `yarn.lock`
-3. install the dependencies `npm install`
+3. install the dependencies `yarn`
 3. run the project `yarn start`
 
 ---
